@@ -1,0 +1,9 @@
+node_modules
+dist
+lib
+module
+*.log
+*.tgz
+
+.yarn/cache
+.yarn/install-state.gz

@@ -1,0 +1,16 @@
+[0;1;32m●[0m nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Sun 2022-01-23 11:37:47 UTC; 2 weeks 4 days ago
+       Docs: man:nginx(8)
+    Process: 52174 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+    Process: 52175 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+   Main PID: 52176 (nginx)
+      Tasks: 3 (limit: 614)
+     Memory: 8.7M
+     CGroup: /system.slice/nginx.service
+             ├─52176 nginx: master process /usr/sbin/nginx -g daemon on; master_process on;
+             ├─52177 nginx: worker process
+             └─52178 nginx: worker process
+
+Jan 23 11:37:46 grupo-vedettaserv.com systemd[1]: Starting A high performance web server and a reverse proxy server...
+Jan 23 11:37:47 grupo-vedettaserv.com systemd[1]: Started A high performance web server and a reverse proxy server.

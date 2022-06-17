@@ -1,0 +1,114 @@
+Executing (default): SELECT 1+1 AS result
+Executing (default): CREATE TABLE IF NOT EXISTS `leads` (`id` INTEGER NOT NULL auto_increment , `name` VARCHAR(255) NOT NULL, `email` VARCHAR(255), `celular` VARCHAR(255), `Site` VARCHAR(255), `number` VARCHAR(255), `segmento` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+sucesso
+Executing (default): CREATE TABLE IF NOT EXISTS `curriculos` (`id` INTEGER NOT NULL auto_increment , `name` VARCHAR(255) NOT NULL, `celular` VARCHAR(255), `anexo` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `leads`
+Executing (default): SHOW INDEX FROM `curriculos`
+events.js:377
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::3050
+    at Server.setupListenHandle [as _listen2] (net.js:1331:16)
+    at listenInCluster (net.js:1379:12)
+    at Server.listen (net.js:1465:7)
+    at Object.<anonymous> (/root/Hospedagem/src/send.js:53:8)
+    at Module._compile (internal/modules/cjs/loader.js:1085:14)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+    at Module.load (internal/modules/cjs/loader.js:950:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:790:12)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:76:12)
+    at internal/main/run_main_module.js:17:47
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (net.js:1358:8)
+    at processTicksAndRejections (internal/process/task_queues.js:82:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 3050
+}
+Executing (default): SELECT 1+1 AS result
+Executing (default): CREATE TABLE IF NOT EXISTS `leads` (`id` INTEGER NOT NULL auto_increment , `name` VARCHAR(255) NOT NULL, `email` VARCHAR(255), `celular` VARCHAR(255), `Site` VARCHAR(255), `number` VARCHAR(255), `segmento` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+Executing (default): CREATE TABLE IF NOT EXISTS `mails` (`id` INTEGER NOT NULL auto_increment , `name` VARCHAR(255) NOT NULL, `email` VARCHAR(255), `celular` VARCHAR(255), `area` VARCHAR(255), `cargo` VARCHAR(255), `mensagem` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+sucesso
+Executing (default): CREATE TABLE IF NOT EXISTS `curriculos` (`id` INTEGER NOT NULL auto_increment , `name` VARCHAR(255) NOT NULL, `celular` VARCHAR(255), `anexo` VARCHAR(255) NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB;
+Executing (default): SHOW INDEX FROM `leads`
+Executing (default): SHOW INDEX FROM `mails`
+Executing (default): SHOW INDEX FROM `curriculos`
+CONTATO=>  nobrejp@outlook.com teste 555 (55) 55555-5555 Bebidas Auxiliar Administrativo undefined
+Executing (default): INSERT INTO `mails` (`id`,`name`,`email`,`celular`,`area`,`cargo`,`mensagem`,`createdAt`,`updatedAt`) VALUES (DEFAULT,?,?,?,?,?,?,?,?);
+<ref *1> Mail {
+  _events: [Object: null prototype] {},
+  _eventsCount: 0,
+  _maxListeners: undefined,
+  options: {
+    host: 'smtp.hostinger.com',
+    port: 465,
+    secure: true,
+    auth: { user: 'admin@grupovedetta.com.br', pass: 'Vedetta2022@' }
+  },
+  _defaults: {},
+  _defaultPlugins: { compile: [ [Function (anonymous)] ], stream: [] },
+  _userPlugins: { compile: [], stream: [] },
+  meta: Map(0) {},
+  dkim: false,
+  transporter: SMTPTransport {
+    _events: [Object: null prototype] {
+      log: [Function (anonymous)],
+      error: [Function (anonymous)],
+      idle: [Function (anonymous)]
+    },
+    _eventsCount: 3,
+    _maxListeners: undefined,
+    options: {
+      host: 'smtp.hostinger.com',
+      port: 465,
+      secure: true,
+      auth: [Object]
+    },
+    logger: {
+      trace: [Function (anonymous)],
+      debug: [Function (anonymous)],
+      info: [Function (anonymous)],
+      warn: [Function (anonymous)],
+      error: [Function (anonymous)],
+      fatal: [Function (anonymous)]
+    },
+    name: 'SMTP',
+    version: '4.7.0[client:4.7.0]',
+    auth: {
+      type: 'LOGIN',
+      user: 'admin@grupovedetta.com.br',
+      credentials: [Object],
+      method: false
+    },
+    mailer: [Circular *1],
+    [Symbol(kCapture)]: false
+  },
+  logger: {
+    trace: [Function (anonymous)],
+    debug: [Function (anonymous)],
+    info: [Function (anonymous)],
+    warn: [Function (anonymous)],
+    error: [Function (anonymous)],
+    fatal: [Function (anonymous)]
+  },
+  close: [Function (anonymous)],
+  isIdle: [Function (anonymous)],
+  verify: [Function (anonymous)],
+  [Symbol(kCapture)]: false
+}
+{
+  accepted: [ 'contato@grupovedetta.com.br' ],
+  rejected: [],
+  envelopeTime: 109,
+  messageTime: 91,
+  messageSize: 518,
+  response: '250 2.0.0 Ok: queued as 4K0jmm42YXz7YpHY',
+  envelope: {
+    from: 'admin@grupovedetta.com.br',
+    to: [ 'contato@grupovedetta.com.br' ]
+  },
+  messageId: '<3f66fb3e-84f6-80a3-5c9c-bb311a2df6b1@grupovedetta.com.br>'
+}
