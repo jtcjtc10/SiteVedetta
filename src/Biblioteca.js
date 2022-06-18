@@ -37,7 +37,7 @@ import Link_b2 from './img/link_b2.jpg';
 import Artigo from  './Artigo1';
 import { Link } from 'react-router-dom';
 
-
+ 
 
   function ExternalImage(props) {
    
