@@ -37,27 +37,57 @@ import Link_b2 from './img/link_b2.jpg';
 import Artigo from  './Artigo1';
 import { Link } from 'react-router-dom';
 
- 
 
-  function ExternalImage(props) {
+function display_filtro(textox){
+  let texto = textox;
+ console.log('função display ativada' . texto);
+
    
-  }
+   let Artigos;
+   let Podcast;
+   let Videos;
+   let styleprops='display:block;margin-top: 0px;background-color: rgb(255 255 255 / 60%);margin-left: auto;margin-right: auto;margin-top: 10%';
+   let styleprops2='display:block;margin-top: 0px;background-color: rgb(255 255 255 / 60%);margin-left: auto;margin-right: auto;margin-top: 7%';
+   let styleprops3='display:block;margin-top: 0px;background-color: rgb(255 255 255 / 60%);margin-left: auto;margin-right: auto;margin-top: 4%';
+  
+  Artigos = document.getElementsByClassName('Artigo_opcao')[0];
+  Podcast = document.getElementsByClassName('Podcast_opcao')[0];
+  Videos = document.getElementsByClassName('Videos_opcao')[0];
+  if(texto == 'Artigos'){
+
+    Videos.style='transition-duration:400ms;opacity:0;visibility:hidden;position:absolute;top:0;    transform: translate3d(0px, 0px, 0px);';
+    Podcast.style='transition-duration:400ms;opacity:0;visibility:hidden;position:absolute;top:0';
+    Artigos.style=styleprops;
+    Artigos.classList.add('animate');
+    Podcast.classList.remove('animate');
+    Videos.classList.remove('animate');
+
+  }else if(texto == 'Videos'){
+    console.log('Videos');
+    Videos.style=styleprops3;
+    Podcast.style='transition-duration:400ms;opacity:0;visibility:hidden;position:absolute;top:0';
+    Artigos.style='transition-duration:400ms;opacity:0;visibility:hidden;position:absolute;top:0';
+    Artigos.classList.remove('animate');
+    Podcast.classList.remove('animate');
+    Videos.classList.add('animate');
+  }else if(texto == 'Podcast'){
     
+    Videos.style='display:none';
+    Podcast.style=styleprops2;
+    Artigos.style='display:none';
+    Artigos.classList.remove('animate')
+    Podcast.classList.add('animate')
+    Videos.classList.remove('animate')
+  }
+
+
+
+}
 
 
 export const Biblioteca = () => {
   const storeId = "storeId";
 
-
- 
- 
-
-
-
-  
-    
-     
-  
 
  const Saiba = () =>{
    return(
@@ -119,50 +149,51 @@ avatar.setAttribute("src","https://1.bp.blogspot.com/-5cTUMBumKL4/YgZ4X5dNJnI/AA
     <div id="leftX" Style="display: block;justify-content: left; margin-bottom: -70%;"><div Style="Float:left;">Filtro </div><br></br><ul Style="float: left;
     display: flex;
     font-size: 85%;"><li Style="
-    margin-right: 10%;"><a href="#ArtigoY" Style="color:black;display:inline-block;text-decoration: none;margin-right: 5px;">Artigos</a></li><li Style="
     margin-right: 10%;">
-<a href="#PodcastY" Style="color:black;display:inline-block;text-decoration: none;margin-right: 5px;">Podcast</a></li><li Style="
-      margin-right: 10%;"><a href="#VídeosY" Style="color:black;display:inline-block;text-decoration: none;margin-right: 5px;">Vídeos</a></li><li Style="
+      <div  className='hover_blue' onClick={() => display_filtro('Artigos')} Style="cursor: grab;display:inline-block;text-decoration: none;margin-right: 5px;">Artigos</div></li><li Style="
     margin-right: 10%;">
-<a href="#LeisY" Style="color:black;display:inline-block;text-decoration: none;margin-right: 5px;">Leis</a></li></ul></div>
+<div onClick={ ()=> display_filtro('Podcast')}className='hover_blue'  Style="cursor: grab;display:inline-block;text-decoration: none;margin-right: 5px;">Podcast</div></li><li Style="
+      margin-right: 10%;"><div onClick={() => display_filtro('Videos')} className='hover_blue' Style="cursor: grab;display:inline-block;text-decoration: none;margin-right: 5px;">Vídeos</div></li><li Style="
+    margin-right: 10%;">
+<a href="#LeisY"className='hover_blue'  Style="cursor: grab;display:inline-block;text-decoration: none;margin-right: 5px;">Leis</a></li></ul></div>
 
  </Container> 
  <br></br>
  <div id='ArtigoY' ></div>
-      <Container  data-anime="up"    Style='    margin-top: 0px;
+      <Container  className='Artigo_opcao'   Style='    margin-top: 0px;
     background-color: rgb(255 255 255 / 60%);
     margin-left: auto;
     margin-right: auto;
     margin-top: 10%
 
     '>    
-    <div id="leftX"Style="   margin-top: 250px; " > Artigos 
+    <div id="leftX"> Artigos 
     </div>
     <iframe onLoad={handleLoad} width="100%" height="818vm" src="https://grupovedetta.blogspot.com/search/label/Postagens"></iframe>
 
  </Container>  
  <br></br>
- <div id='PodcastY'Style="    margin-top: 200px;"></div>
- <Container  data-anime="up"    Style='    margin-top: 0px;
+ <div id='PodcastY'></div>
+ <Container  className='Podcast_opcao'   Style='    margin-top: 0px;
     background-color: rgb(255 255 255 / 60%);
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10%
+    margin-top: 2%
     '>    
-    <div id="leftX" Style="   margin-top: 250px; "> Podcasts
+    <div id="leftX"> Podcasts
     </div>
     <iframe onLoad={handleLoad} width="100%" height="818vm" src="https://grupovedetta.blogspot.com/search/label/Podcasts"></iframe>
 
  </Container> 
  <br></br>
- <div id="VídeosY" Style="    margin-top: 200px;"></div>
- <Container  data-anime="up"    Style='    margin-top: 0px;
+ <div id="VídeosY"></div>
+ <Container  className='Videos_opcao'   Style='    margin-top: 0px;
     background-color: rgb(255 255 255 / 60%);
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10%
+    margin-top: -15%
     '>    
-    <div id="leftX"Style="   margin-top: 250px; "> Videos
+    <div id="leftX"> Videos
     </div>
     <iframe onLoad={handleLoad} width="100%" height="818vm" src="https://grupovedetta.blogspot.com/search/label/V%C3%ADdeo"></iframe>
 

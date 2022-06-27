@@ -712,6 +712,26 @@ border-bottom: solid;
     font-size: 130%;
     justify-content: center;
 }
+.Artigo_opcao{
+  display:block;
+  margin-top: 0px;
+    background-color: rgb(255 255 255 / 60%);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%
+}
+.Podcast_opcao{
+  display:none;
+}
+.Videos_opcao{
+  display:none;
+}
+.hover_blue{
+  color:black;
+}
+.hover_blue:hover{
+  color:#004f80;
+}
 #ArtigoX{
   
   color: black;
